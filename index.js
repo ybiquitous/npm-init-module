@@ -4,31 +4,29 @@ const { execSync } = require("child_process");
 const run = cmd => execSync(cmd, { encoding: "utf8" }).trim();
 
 const parseOptions = () => {
-  return process.argv
-    .slice(3)
-    .reduce((opts, arg, index, args) => {
-      if (!arg.startsWith("--")) {
+  return process.argv.slice(3).reduce((opts, arg, index, args) => {
+    if (!arg.startsWith("--")) {
+      return opts;
+    }
+
+    let key;
+    let value;
+    if (arg.includes("=")) {
+      [key, value] = arg.split("=");
+    } else {
+      value = args[index + 1];
+      if (value) {
+        key = arg;
+      } else {
         return opts;
       }
+    }
 
-      let key
-      let value
-      if (arg.includes("=")) {
-        [key, value] = arg.split("=");
-      } else {
-        value = args[index + 1];
-        if (value) {
-          key = arg
-        } else {
-          return opts
-        }
-      }
+    key = key.replace(/^--/, "");
 
-      key = key.replace(/^--/, "")
-
-      opts[key] = value
-      return opts;
-    }, {});
+    opts[key] = value;
+    return opts;
+  }, {});
 };
 
 const opts = parseOptions("scope", "owner", "license", "private");
@@ -41,8 +39,8 @@ if (scope) {
 
 const owner = opts.owner || "OWNER";
 
-const private = opts.private === "true"
-const license = private ? "UNLICENSED" : (opts.license || "MIT")
+const private = opts.private === "true";
+const license = private ? "UNLICENSED" : opts.license || "MIT";
 
 module.exports = {
   version: "0.0.1",
