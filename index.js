@@ -67,7 +67,7 @@ module.exports = {
   homepage: `https://github.com/${owner}/${name}#readme`,
 
   engines: {
-    node: ">=6.4.0",
+    node: ">=6.4.0", // supporting almost ES6 features
   },
 
   main: "index.js",
