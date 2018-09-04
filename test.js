@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 
 const run = cmd => {
-  console.debug(`> ${cmd}`);
+  console.log(`> ${cmd}`);
   execSync(cmd, { stdio: "inherit" });
 };
 
