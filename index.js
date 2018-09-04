@@ -39,9 +39,6 @@ if (scope) {
 
 const owner = opts.owner || "OWNER";
 
-const private = opts.private === "true";
-const license = private ? "UNLICENSED" : opts.license || "MIT";
-
 module.exports = {
   version: "0.0.1",
 
@@ -54,9 +51,9 @@ module.exports = {
     email: run("git config user.email"),
   },
 
-  private: private || undefined,
+  private: opts.private === "true" || undefined,
 
-  license: license,
+  license: opts.license || "MIT",
 
   repository: {
     type: "git",

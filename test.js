@@ -26,8 +26,7 @@ chdir("tmp", () => {
 
   [
     "npm init -y",
-    "npm init -y --scope=foo --owner=bar --license=GPL",
-    "npm init -y --scope=foo --owner=bar --private=true",
+    "npm init -y --scope=foo --owner=bar --license=GPL --private=true",
   ].forEach(cmd => {
     run(cmd);
     run("rm -f package.json");

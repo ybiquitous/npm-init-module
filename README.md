@@ -15,13 +15,7 @@ curl -L https://raw.githubusercontent.com/ybiquitous/npm-init-module/master/inde
 ## Usage
 
 ```sh
-npm init [--scope=<SCOPE>] [--owner=<OWNER>] [--license=<LICENSE>]
-```
-
-or
-
-```sh
-npm init [--scope=<SCOPE>] [--owner=<OWNER>] [--private=true]
+npm init [--scope=<SCOPE>] [--owner=<OWNER>] [--license=<LICENSE>] [--private=true]
 ```
 
 ## License
