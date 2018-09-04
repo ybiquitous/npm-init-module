@@ -1,0 +1,22 @@
+{
+  "version": "0.0.1",
+  "name": "npm-init-module",
+  "description": "<TODO>",
+  "author": "Masafumi Koba <ybiquitous@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OWNER/npm-init-module.git"
+  },
+  "bugs": {
+    "url": "https://github.com/OWNER/npm-init-module/issues"
+  },
+  "homepage": "https://github.com/OWNER/npm-init-module#readme",
+  "engines": {
+    "node": ">=6.4.0"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  }
+}
