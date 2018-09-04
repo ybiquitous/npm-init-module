@@ -26,7 +26,7 @@ ln -s $(pwd)/index.js ~/.npm-init.js
 npm init [--scope=<SCOPE>] [--owner=<OWNER>] [--license=<LICENSE>] [--private=true]
 ```
 
-**NOTE:** `--owner`, `--license` and `--private` options are non-standard.
+**NOTE:** `--owner`, `--license` and `--private` options are NOT standard.
 
 ## License
 
