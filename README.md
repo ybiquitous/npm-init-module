@@ -18,6 +18,8 @@ curl -L https://raw.githubusercontent.com/ybiquitous/npm-init-module/master/inde
 npm init [--scope=<SCOPE>] [--owner=<OWNER>] [--license=<LICENSE>] [--private=true]
 ```
 
+**NOTE:** `--owner`, `--license` and `--private` options are non-standard.
+
 ## License
 
 [MIT](LICENSE)
