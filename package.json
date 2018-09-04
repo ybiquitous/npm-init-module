@@ -6,12 +6,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OWNER/npm-init-module.git"
+    "url": "git+https://github.com/ybiquitous/npm-init-module.git"
   },
   "bugs": {
-    "url": "https://github.com/OWNER/npm-init-module/issues"
+    "url": "https://github.com/ybiquitous/npm-init-module/issues"
   },
-  "homepage": "https://github.com/OWNER/npm-init-module#readme",
+  "homepage": "https://github.com/ybiquitous/npm-init-module#readme",
   "engines": {
     "node": ">=6.4.0"
   },
