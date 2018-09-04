@@ -1,5 +1,7 @@
 # npm-init-module
 
+[![Build Status](https://travis-ci.com/ybiquitous/npm-init-module.svg?branch=master)](https://travis-ci.com/ybiquitous/npm-init-module)
+
 A custom configuration for [`npm init`](https://docs.npmjs.com/cli/init) command.
 
 For details, please see the [`init-module`](https://docs.npmjs.com/misc/config#init-module) configuration.
