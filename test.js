@@ -1,5 +1,4 @@
 const { execSync } = require("child_process");
-const fs = require("fs");
 const path = require("path");
 
 const run = cmd => {
@@ -22,11 +21,10 @@ run("mkdir -p tmp");
 
 chdir("tmp", () => {
   const initModule = path.resolve("..", "index.js");
-  fs.writeFileSync(".npmrc", `init-module = "${initModule}"`);
-
+  const initCmd = `npm init --yes --init-module="${initModule}"`;
   [
-    "npm init -y",
-    "npm init -y --scope=foo --owner=bar --license=GPL --private=true",
+    initCmd,
+    initCmd + " --scope=foo --owner=bar --license=GPL --private=true",
   ].forEach(cmd => {
     run(cmd);
     run("rm -f package.json");
