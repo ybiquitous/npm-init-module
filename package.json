@@ -1,7 +1,7 @@
 {
   "version": "0.0.1",
   "name": "npm-init-module",
-  "description": "<TODO>",
+  "description": "A custom configuration for the `npm init` command.",
   "author": "Masafumi Koba <ybiquitous@gmail.com>",
   "license": "MIT",
   "repository": {
