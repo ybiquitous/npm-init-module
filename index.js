@@ -112,9 +112,9 @@ if (scope) {
 const owner = opts.owner || "OWNER";
 
 module.exports = {
-  version: "0.0.1",
-
   name: name,
+
+  version: "0.0.1",
 
   description: "<TODO>",
 
