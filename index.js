@@ -43,7 +43,7 @@ module.exports = {
     sourceType: "module",
     // Enable if you use JSX
     // ecmaFeatures: {
-    //  jsx: true,
+    //   jsx: true,
     // },
   },
 
