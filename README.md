@@ -4,7 +4,7 @@
 
 A custom configuration for the [`npm init`](https://docs.npmjs.com/cli/init) command.
 
-For details, please see the [`init-module`](https://docs.npmjs.com/misc/config#init-module) configuration.
+For details, please see the [`init-module`](https://docs.npmjs.com/misc/config#init-module) setting in the `npm-config` documentation.
 
 ## Install
 
@@ -16,8 +16,16 @@ or
 
 ```sh
 git clone https://github.com/ybiquitous/npm-init-module.git
-cd npm-init-module
-ln -s $(pwd)/index.js ~/.npm-init.js
+ln -s $(pwd)/npm-init-module/index.js ~/.npm-init.js
+```
+
+or
+
+```sh
+git clone https://github.com/ybiquitous/npm-init-module.git
+cat <<EOF >> ~/.npmrc
+init-module = "$(pwd)/npm-init-module/.npm-init.js"
+EOF
 ```
 
 ## Usage
