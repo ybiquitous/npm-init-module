@@ -36,10 +36,15 @@ writeTo(".eslintrc.js", `
 module.exports = {
   root: true,
 
-  extends: "eslint:recommended",
+  extends: ["eslint:recommended"],
 
   parserOptions: {
     ecmaVersion: 6,
+    sourceType: "module",
+    // Enable if you use JSX
+    // ecmaFeatures: {
+    //  jsx: true,
+    // },
   },
 
   env: {
