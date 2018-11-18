@@ -9,12 +9,6 @@ const writeTo = (file, content) => {
   }
 }
 
-writeTo(".commitlintrc.js", `
-module.exports = {
-  extends: ["@commitlint/config-conventional"],
-};
-`)
-
 writeTo(".editorconfig", `
 root = true
 
