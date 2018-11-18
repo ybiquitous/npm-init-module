@@ -4,18 +4,14 @@
   "description": "A custom configuration for the `npm init` command.",
   "author": "Masafumi Koba <ybiquitous@gmail.com>",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ybiquitous/npm-init-module.git"
-  },
-  "bugs": {
-    "url": "https://github.com/ybiquitous/npm-init-module/issues"
-  },
-  "homepage": "https://github.com/ybiquitous/npm-init-module#readme",
+  "repository": "ybiquitous/npm-init-module",
   "engines": {
     "node": ">=8"
   },
   "main": "index.js",
+  "devDependencies": {
+    "ybiq": "latest"
+  },
   "scripts": {
     "test": "node test.js",
     "lint": "npm-run-all --print-label --parallel lint:*",
@@ -51,8 +47,5 @@
     "ignore": [
       "CHANGELOG.md"
     ]
-  },
-  "devDependencies": {
-    "ybiq": "latest"
   }
 }
