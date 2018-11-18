@@ -1,15 +1,17 @@
 const path = require("path");
 const { execSync } = require("child_process");
-const fs = require("fs")
+const fs = require("fs");
 
 const writeTo = (file, content) => {
   if (!fs.existsSync(file)) {
-    console.log(`Wrote to ${path.resolve(file)}`)
-    fs.writeFileSync(file, content.trim() + "\n")
+    console.log(`Wrote to ${path.resolve(file)}`);
+    fs.writeFileSync(file, content.trim() + "\n");
   }
-}
+};
 
-writeTo(".editorconfig", `
+writeTo(
+  ".editorconfig",
+  `
 root = true
 
 [*]
@@ -24,9 +26,12 @@ max_line_length = 80
 # trailing spaces in markdown indicate word wrap
 [*.md]
 trim_trailing_spaces = false
-`)
+`
+);
 
-writeTo(".eslintrc.js", `
+writeTo(
+  ".eslintrc.js",
+  `
 module.exports = {
   root: true,
 
@@ -49,23 +54,26 @@ module.exports = {
     // add rules...
   },
 };
-`)
+`
+);
 
 const run = cmd => execSync(cmd, { encoding: "utf8" }).trim();
 
-const isCommandExists = (cmd) => {
+const isCommandExists = cmd => {
   try {
-    run(`which ${cmd}`)
-    return true
+    run(`which ${cmd}`);
+    return true;
   } catch (err) {
-    return false
+    return false;
   }
-}
+};
 
 if (isCommandExists("gibo")) {
-  writeTo(".gitignore", run("gibo dump Node"))
+  writeTo(".gitignore", run("gibo dump Node"));
 } else {
-  console.log(`WARN: Recommended to install 'gibo' (https://github.com/simonwhitaker/gibo)`)
+  console.log(
+    `WARN: Recommended to install 'gibo' (https://github.com/simonwhitaker/gibo)`
+  );
 }
 
 const parseOptions = () => {
@@ -142,6 +150,6 @@ module.exports = {
   },
 
   prettier: {
-    "trailingComma": "es5"
+    trailingComma: "es5",
   },
 };
