@@ -149,6 +149,10 @@ module.exports = {
     test: 'echo "No tests." && exit 1',
   },
 
+  commitlint: {
+    extends: ["@commitlint/config-conventional"],
+  },
+
   prettier: {
     trailingComma: "es5",
   },
