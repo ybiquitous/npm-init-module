@@ -35,11 +35,9 @@
         "git add"
       ],
       "*.md": [
-        "prettier --write",
-        "markdownlint",
-        "git add"
+        "markdownlint"
       ],
-      "*.{json,yml,yaml}": [
+      "*.{json,md,yml,yaml}": [
         "prettier --write",
         "git add"
       ]
