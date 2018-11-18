@@ -51,12 +51,6 @@ module.exports = {
 };
 `)
 
-writeTo(".prettierrc.js", `
-module.exports = {
-  trailingComma: "es5",
-};
-`)
-
 const run = cmd => execSync(cmd, { encoding: "utf8" }).trim();
 
 const isCommandExists = (cmd) => {
@@ -145,5 +139,9 @@ module.exports = {
 
   scripts: {
     test: 'echo "No tests." && exit 1',
+  },
+
+  prettier: {
+    "trailingComma": "es5"
   },
 };
