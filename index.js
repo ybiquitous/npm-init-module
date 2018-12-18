@@ -110,14 +110,14 @@ if (scope) {
   name = `@${scope}/${name}`;
 }
 
-const owner = opts.owner || "OWNER";
+const owner = opts.owner || "{{OWNER}}";
 
 module.exports = {
   name: name,
 
   version: "0.0.1",
 
-  description: "<TODO>",
+  description: "{{DESCRIPTION}}",
 
   author: {
     name: run("git config user.name"),
