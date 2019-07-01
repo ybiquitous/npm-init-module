@@ -71,9 +71,7 @@ const isCommandExists = cmd => {
 if (isCommandExists("gibo")) {
   writeTo(".gitignore", run("gibo dump Node"));
 } else {
-  console.log(
-    `WARN: Recommended to install 'gibo' (https://github.com/simonwhitaker/gibo)`
-  );
+  console.log(`WARN: Recommended to install 'gibo' (https://github.com/simonwhitaker/gibo)`);
 }
 
 const parseOptions = () => {
