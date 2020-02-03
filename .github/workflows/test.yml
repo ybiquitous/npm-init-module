@@ -20,6 +20,7 @@ jobs:
       - run: npm ci
       - run: npm run prettier:check
       - run: npm run lint
+      - run: git config user.name "Actions" && git config user.email "actions@github.com"
       - run: npm test
       - uses: wagoid/commitlint-github-action@v1
         env:
