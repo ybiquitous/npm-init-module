@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": "ybiquitous/npm-init-module",
   "engines": {
-    "node": ">=8"
+    "node": ">=10"
   },
   "main": "index.js",
   "devDependencies": {
