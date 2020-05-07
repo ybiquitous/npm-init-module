@@ -5,7 +5,7 @@ const fs = require("fs");
 const writeTo = (file, content) => {
   if (!fs.existsSync(file)) {
     console.log(`Wrote to ${path.resolve(file)}`);
-    fs.writeFileSync(file, content.trim() + "\n");
+    fs.writeFileSync(file, `${content.trim()}\n`);
   }
 };
 
@@ -57,9 +57,9 @@ module.exports = {
 `
 );
 
-const run = cmd => execSync(cmd, { encoding: "utf8" }).trim();
+const run = (cmd) => execSync(cmd, { encoding: "utf8" }).trim();
 
-const isCommandExists = cmd => {
+const isCommandExists = (cmd) => {
   try {
     run(`which ${cmd}`);
     return true;
@@ -75,6 +75,7 @@ if (isCommandExists("gibo")) {
 }
 
 const parseOptions = () => {
+  // eslint-disable-next-line max-statements, max-params
   return process.argv.slice(3).reduce((opts, arg, index, args) => {
     if (!arg.startsWith("--")) {
       return opts;
@@ -93,7 +94,7 @@ const parseOptions = () => {
       }
     }
 
-    key = key.replace(/^--/, "");
+    key = key.replace(/^--/u, "");
 
     opts[key] = value;
     return opts;
@@ -103,7 +104,7 @@ const parseOptions = () => {
 const opts = parseOptions("scope", "owner", "license", "private");
 
 let name = path.basename(process.cwd());
-const scope = opts.scope;
+const { scope } = opts;
 if (scope) {
   name = `@${scope}/${name}`;
 }
@@ -111,7 +112,7 @@ if (scope) {
 const owner = opts.owner || "{{OWNER}}";
 
 module.exports = {
-  name: name,
+  name,
 
   version: "0.0.1",
 

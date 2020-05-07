@@ -1,7 +1,7 @@
 const { execSync } = require("child_process");
 const path = require("path");
 
-const run = cmd => {
+const run = (cmd) => {
   console.log(`> ${cmd}`);
   execSync(cmd, { stdio: "inherit" });
 };
@@ -22,7 +22,7 @@ run("mkdir -p tmp");
 chdir("tmp", () => {
   const initModule = path.resolve("..", "index.js");
   const initCmd = `npm init --yes --init-module="${initModule}"`;
-  [initCmd, initCmd + " --scope=foo --owner=bar --license=GPL --private=true"].forEach(cmd => {
+  [initCmd, `${initCmd} --scope=foo --owner=bar --license=GPL --private=true`].forEach((cmd) => {
     run(cmd);
     run("rm -f package.json");
   });
