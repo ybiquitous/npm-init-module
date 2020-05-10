@@ -14,16 +14,8 @@ or
 
 ```sh
 git clone https://github.com/ybiquitous/npm-init-module.git
-ln -s $(pwd)/npm-init-module/index.js ~/.npm-init.js
-```
-
-or
-
-```sh
-git clone https://github.com/ybiquitous/npm-init-module.git
-cat <<EOF >> ~/.npmrc
-init-module = "$(pwd)/npm-init-module/.npm-init.js"
-EOF
+cd npm-init-module
+npm config set init-module $(pwd)/index.js
 ```
 
 ## Usage
