@@ -11,7 +11,7 @@
   "main": "index.js",
   "devDependencies": {
     "eslint-config-ybiquitous": "^11.0.0",
-    "ybiq": "^11.3.0"
+    "ybiq": "^11.5.0"
   },
   "scripts": {
     "test": "node test.js",
