@@ -5,7 +5,7 @@ A custom [`init-module`](https://docs.npmjs.com/misc/config#init-module) configu
 ## Install
 
 ```sh
-curl -L https://raw.githubusercontent.com/ybiquitous/npm-init-module/master/index.js > ~/.npm-init.js
+curl -L https://raw.githubusercontent.com/ybiquitous/npm-init-module/main/index.js > ~/.npm-init.js
 ```
 
 or
