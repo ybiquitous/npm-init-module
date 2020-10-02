@@ -26,7 +26,7 @@
     "format": "npm-run-all --print-label --parallel lint:*:fix prettier:write",
     "release": "standard-version",
     "release:dry-run": "standard-version --dry-run",
-    "prerelease": "git switch master && git pull && npm ci && npm run clean && npm test && npm run lint && npm run clean",
+    "prerelease": "git switch main && git pull && npm ci && npm run clean && npm test && npm run lint && npm run clean",
     "clean": "git clean -dx --force --exclude=node_modules"
   },
   "husky": {
