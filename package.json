@@ -10,7 +10,7 @@
   },
   "main": "index.js",
   "devDependencies": {
-    "eslint-config-ybiquitous": "^12.0.0",
+    "eslint-config-ybiquitous": "^12.6.0",
     "ybiq": "^11.5.0"
   },
   "scripts": {
