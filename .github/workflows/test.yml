@@ -11,14 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: ["10", "12", "14"]
+        node-version: ["12", "14"]
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
+      - run: npm --global install npm@latest
       - run: npm ci
       - run: npm run lint
-      - run: git config user.name "Actions" && git config user.email "actions@github.com"
       - run: npm test
       - run: npm run release:dry-run

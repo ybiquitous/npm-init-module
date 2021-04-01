@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": "ybiquitous/npm-init-module",
   "engines": {
-    "node": ">=10"
+    "node": ">=12"
   },
   "main": "index.js",
   "devDependencies": {
@@ -15,11 +15,14 @@
   },
   "scripts": {
     "test": "node test.js",
+    "test:watch": "node test.js --watch",
+    "test:coverage": "echo \"unsupported.\" && exit 1",
     "lint": "npm-run-all --print-label --parallel lint:* prettier:check",
     "lint:js": "eslint .",
     "lint:js:fix": "npm run lint:js -- --fix",
     "lint:md": "remark . --frail",
     "lint:md:fix": "remark . --output",
+    "lint:types": "tsc --noEmit",
     "prettier": "prettier --ignore-path .gitignore .",
     "prettier:check": "npm run prettier -- --check",
     "prettier:write": "npm run prettier -- --write",
@@ -27,14 +30,8 @@
     "release": "standard-version",
     "release:dry-run": "standard-version --dry-run",
     "prerelease": "git switch main && git pull && npm ci && npm run clean && npm test && npm run lint && npm run clean",
-    "clean": "git clean -dx --force --exclude=node_modules"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged",
-      "post-commit": "npm run release:dry-run"
-    }
+    "clean": "git clean -dx --force --exclude=node_modules --exclude=.husky",
+    "prepare": "husky install"
   },
   "commitlint": {
     "extends": [
