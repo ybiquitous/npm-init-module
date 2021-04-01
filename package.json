@@ -6,15 +6,17 @@
   "license": "MIT",
   "repository": "ybiquitous/npm-init-module",
   "engines": {
-    "node": ">=10"
+    "node": ">=12"
   },
   "main": "index.js",
   "devDependencies": {
     "eslint-config-ybiquitous": "^12.0.0",
-    "ybiq": "^11.5.0"
+    "ybiq": "^12.0.3"
   },
   "scripts": {
     "test": "node test.js",
+    "test:watch": "node test.js --watch",
+    "test:coverage": "echo \"unsupported.\" && exit 1",
     "lint": "npm-run-all --print-label --parallel lint:* prettier:check",
     "lint:js": "eslint .",
     "lint:js:fix": "npm run lint:js -- --fix",
@@ -27,14 +29,8 @@
     "release": "standard-version",
     "release:dry-run": "standard-version --dry-run",
     "prerelease": "git switch main && git pull && npm ci && npm run clean && npm test && npm run lint && npm run clean",
-    "clean": "git clean -dx --force --exclude=node_modules"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged",
-      "post-commit": "npm run release:dry-run"
-    }
+    "clean": "git clean -dx --force --exclude=node_modules --exclude=.husky",
+    "prepare": "husky install"
   },
   "commitlint": {
     "extends": [
