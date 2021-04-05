@@ -74,9 +74,9 @@ if (isCommandExists("gibo")) {
   console.log(`WARN: Recommended to install 'gibo' (https://github.com/simonwhitaker/gibo)`);
 }
 
-const parseOptions = () => {
+const parseOptions = () =>
   // eslint-disable-next-line max-statements, max-params
-  return process.argv.slice(3).reduce((opts, arg, index, args) => {
+  process.argv.slice(3).reduce((opts, arg, index, args) => {
     if (!arg.startsWith("--")) {
       return opts;
     }
@@ -99,8 +99,6 @@ const parseOptions = () => {
     opts[key] = value;
     return opts;
   }, {});
-};
-
 const opts = parseOptions("scope", "owner", "license", "private");
 
 let name = path.basename(process.cwd());
@@ -150,9 +148,5 @@ module.exports = {
 
   commitlint: {
     extends: ["@commitlint/config-conventional"],
-  },
-
-  prettier: {
-    trailingComma: "es5",
   },
 };
