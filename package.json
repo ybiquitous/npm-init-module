@@ -11,12 +11,13 @@
   "main": "index.js",
   "devDependencies": {
     "eslint-config-ybiquitous": "^13.1.0",
+    "remark-preset-ybiquitous": "^0.0.3",
     "ybiq": "^12.2.1"
   },
   "scripts": {
     "test": "node test.js",
     "test:watch": "node test.js --watch",
-    "test:coverage": "echo \"unsupported.\" && exit 1",
+    "test:coverage": "node test.js --coverage",
     "lint": "npm-run-all --print-label --parallel lint:* prettier:check",
     "lint:js": "eslint .",
     "lint:js:fix": "npm run lint:js -- --fix",
@@ -60,23 +61,17 @@
   },
   "remarkConfig": {
     "plugins": [
-      "preset-lint-recommended",
-      "lint-no-heading-punctuation",
-      [
-        "lint-list-item-bullet-indent",
-        false
-      ],
-      [
-        "lint-list-item-indent",
-        false
-      ],
-      "validate-links"
+      "remark-preset-ybiquitous"
     ]
   },
   "eslintConfig": {
     "root": true,
     "extends": [
       "ybiquitous/node"
+    ],
+    "reportUnusedDisableDirectives": true,
+    "ignorePatterns": [
+      "tmp"
     ],
     "rules": {
       "no-console": "warn"
