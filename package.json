@@ -2,7 +2,7 @@
   "version": "0.0.1",
   "name": "npm-init-module",
   "description": "A custom configuration for the `npm init` command.",
-  "author": "Masafumi Koba <ybiquitous@gmail.com>",
+  "author": "Masafumi Koba",
   "license": "MIT",
   "repository": "ybiquitous/npm-init-module",
   "engines": {
@@ -12,7 +12,7 @@
   "devDependencies": {
     "eslint-config-ybiquitous": "^13.2.0",
     "remark-preset-ybiquitous": "^0.0.4",
-    "ybiq": "^12.4.0"
+    "ybiq": "^13.0.0"
   },
   "scripts": {
     "test": "node test.js",
@@ -69,10 +69,12 @@
     "extends": [
       "ybiquitous/node"
     ],
-    "reportUnusedDisableDirectives": true,
     "ignorePatterns": [
+      "coverage",
+      "dist",
       "tmp"
     ],
+    "reportUnusedDisableDirectives": true,
     "rules": {
       "no-console": "warn"
     }
