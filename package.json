@@ -11,7 +11,7 @@
   "main": "index.js",
   "devDependencies": {
     "eslint-config-ybiquitous": "^13.2.0",
-    "remark-preset-ybiquitous": "^0.0.4",
+    "remark-preset-ybiquitous": "^0.0.5",
     "ybiq": "^13.1.0"
   },
   "scripts": {
