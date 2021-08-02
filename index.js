@@ -1,11 +1,12 @@
 const path = require("path");
 const { execSync } = require("child_process");
 const fs = require("fs");
+const { EOL } = require("os");
 
 const writeTo = (file, content) => {
   if (!fs.existsSync(file)) {
-    console.log(`Wrote to ${path.resolve(file)}`);
-    fs.writeFileSync(file, `${content.trim()}\n`);
+    process.stdout.write(`Wrote to ${path.resolve(file)}${EOL}`);
+    fs.writeFileSync(file, `${content.trim()}${EOL}`);
   }
 };
 
@@ -71,7 +72,9 @@ const isCommandExists = (cmd) => {
 if (isCommandExists("gibo")) {
   writeTo(".gitignore", run("gibo dump Node"));
 } else {
-  console.log(`WARN: Recommended to install 'gibo' (https://github.com/simonwhitaker/gibo)`);
+  process.stdout.write(
+    `WARN: Recommended to install 'gibo' (https://github.com/simonwhitaker/gibo)${EOL}`
+  );
 }
 
 const parseOptions = () =>
