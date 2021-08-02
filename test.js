@@ -1,8 +1,9 @@
 const { execSync } = require("child_process");
 const path = require("path");
+const { EOL } = require("os");
 
 const run = (cmd) => {
-  console.log(`> ${cmd}`);
+  process.stdout.write(`> ${cmd}${EOL}`);
   execSync(cmd, { stdio: "inherit" });
 };
 

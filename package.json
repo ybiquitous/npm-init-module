@@ -74,9 +74,6 @@
       "dist",
       "tmp"
     ],
-    "reportUnusedDisableDirectives": true,
-    "rules": {
-      "no-console": "warn"
-    }
+    "reportUnusedDisableDirectives": true
   }
 }
