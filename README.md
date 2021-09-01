@@ -13,7 +13,7 @@ or
 ```sh
 git clone https://github.com/ybiquitous/npm-init-module.git
 cd npm-init-module
-npm config set init-module $(pwd)/index.js
+npm config set init-module "${PWD}/index.js"
 ```
 
 ## Usage
