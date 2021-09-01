@@ -5,7 +5,7 @@ A custom [`init-module`](https://docs.npmjs.com/cli/v7/using-npm/config#init-mod
 ## Install
 
 ```sh
-curl -L https://raw.githubusercontent.com/ybiquitous/npm-init-module/main/index.js > ~/.npm-init.js
+curl -L -o ~/.npm-init.js https://raw.githubusercontent.com/ybiquitous/npm-init-module/HEAD/index.js
 ```
 
 or
@@ -13,7 +13,7 @@ or
 ```sh
 git clone https://github.com/ybiquitous/npm-init-module.git
 cd npm-init-module
-npm config set init-module $(pwd)/index.js
+npm config set init-module "${PWD}/index.js"
 ```
 
 ## Usage
