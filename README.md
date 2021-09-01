@@ -1,6 +1,6 @@
 # npm-init-module
 
-A custom [`init-module`](https://docs.npmjs.com/misc/config#init-module) configuration for the [`npm init`](https://docs.npmjs.com/cli/init) command.
+A custom [`init-module`](https://docs.npmjs.com/cli/v7/using-npm/config#init-module) configuration for the [`npm init`](https://docs.npmjs.com/cli/init) command.
 
 ## Install
 
