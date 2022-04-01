@@ -12,7 +12,7 @@
   "devDependencies": {
     "eslint-config-ybiquitous": "^13.2.0",
     "remark-preset-ybiquitous": "^0.0.5",
-    "ybiq": "^13.3.0"
+    "ybiq": "^14.2.0"
   },
   "scripts": {
     "test": "node test.js",
